@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Ingress 新手教学</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Loading Bootstrap -->
+    <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.min.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      .darkBlue{
+        color:#2980B9;
+      }
+      .lightBlue{
+        color:#3498DB;
+      }
+      .ui-slider-handle{
+        color:#3498DB;
+      }
+      ul b{
+        color:#3498DB;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <h1 style="text-align:center">升级</h1>
+        <small style="text-align:center">对ingress玩家来说，没什么比升级更令人兴奋的了。除了可以使用更高级的道具之外，升级还有利于你进行更大范围的探索。尽快升级，上上之选。</small>
+    
+            <div class="row">
+              <div class="col-xs-6 column">
+                  <h4>1-8级玩家：</h4>
+                  <p>由于前8级升级只对AP有要求，所以在日常游玩的同时，请优先考虑建立短连接和多重Field，以增加更多的AP。</p>
+                  <ul style="list-style-type:none;padding-left:0px" class="lightBlue">
+                  <li>L1 = 0 AP</li>
+                  <li>L2 = 2,500 AP</li>
+                  <li>L3 = 20,000 AP</li>
+                  <li>L4 = 70,000 AP</li>
+                  <li>L5 = 150,000 AP</li>
+                  <li>L6 = 300,000 AP</li>
+                  <li>L7 = 600,000 AP</li>
+                  <li>L8 = 1,2000,000 AP</li>
+                  </ul>
+
+              </div>
+              <div class="col-xs-6 column">
+                  <h4>9级以上玩家：</h4>
+                  <p>由于8级之后还需要在勋章上有所突破，所以可能会更加困难。但是升级仍然会带来XM容量的扩充以及充电效率的提高。</p>
+                  <ul style="list-style-type:none;padding-left:0px" class="lightBlue">
+                  <li>L 9  = 2,400,000 AP + 1 x <span class="fui-checkbox-unchecked" style="color:#F39c12"></span> + 4 x <span class="fui-checkbox-unchecked" style="color:#BDC3C7"></span></li>
+                  <li>L10 = 4,000,000 AP + 2 x <span class="fui-checkbox-unchecked" style="color:#F39c12"></span> + 5 x <span class="fui-checkbox-unchecked" style="color:#BDC3C7"></span></li>
+                  <li>L11 = 6,000,000 AP + 4 x <span class="fui-checkbox-unchecked" style="color:#F39c12"></span> + 6 x <span class="fui-checkbox-unchecked" style="color:#BDC3C7"></span></li>
+                  <li>L12 = 8,400,000 AP + 6 x <span class="fui-checkbox-unchecked" style="color:#F39c12"></span> + 7 x <span class="fui-checkbox-unchecked" style="color:#BDC3C7"></span></li>
+                  <li>L13 = 12,000,000 AP + 1 x <span class="fui-checkbox-unchecked" style="color:#7F8C8D"></span> + 7 x <span class="fui-checkbox-unchecked" style="color:#F39c12"></span></li>
+                  <li>L14 = 17,000,000 AP + 2 x <span class="fui-checkbox-unchecked" style="color:#7F8C8D"></span> + 7 x <span class="fui-checkbox-unchecked" style="color:#F39c12"></span></li>
+                  <li>L15 = 24,000,000 AP + 3 x <span class="fui-checkbox-unchecked" style="color:#7F8C8D"></span> + 7 x <span class="fui-checkbox-unchecked" style="color:#F39c12"></span></li>
+                  <li>L16 = 40,000,000 AP + 2 x <span class="fui-checkbox-unchecked" style="color:#2C3E50"></span> + 4 x <span class="fui-checkbox-unchecked" style="color:#7F8C8D"></span> + 7 x <span class="fui-checkbox-unchecked" style="color:#F39c12"></span></li>
+                  </ul>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-5 column">
+                  <h1 style="text-align:center" id="lvlup_Indicator1">Lv 1</h1>
+                  <div id="lole_slider"></div>
+                    <p><b>最大XM容量：</b><span id="lvlup_Indicator1_XM" class="lightBlue">2000 XM</span></p>
+                    <p><b>最大充电距离：</b><span id="lvlup_Indicator1_Rec" class="lightBlue">2000km</span></p>
+                    <p><b>可以使用的道具等级：</b><span id="lvlup_Indicator1_WeaponLvl" class="lightBlue">1</span></p>
+                    <p><b>一个人建立po的最高等级：</b><span id="lvlup_Indicator1_PortalLvl" class="lightBlue">1</span></p>
+              </div>
+              <div class="col-xs-1 column">
+              </div>
+              <div class="col-xs-6 column" >
+                  <ul style="list-style-type:none;padding-left:0px;padding-top:30px">
+                  <small>
+                  <li>Deploy Resonator =<b> 125 AP</b></li>
+                  <li>Capture Portal = <b>500 AP</b></li>
+                  <li>Deploy 8th Resonator on Portal = <b>250 AP</b></li>
+                  <li>Upgrade Other Player Resonator = <b>65 AP</b></li>
+                  <li>Recharge Portal =<b> 10 AP</b></li>
+                  <li>Establish Link =<b> 313 AP</b></li>
+                  <li>Create Control Field = <b>1250 AP</b></li>
+                  <li>Hack Enemy Portal = <b>100 AP</b></li>
+                  <li>Destroy Resonator =<b> 75 AP</b></li>
+                  <li>Destroy Link =<b> 187 AP</b></li>
+                  <li>Destroy Control Field =<b> 750 AP</b></li>
+                  <li>Portal Approved&nbsp;=<b>&nbsp;1000 AP</b></li>
+                  <li>Portal Photo Approved =<b>&nbsp;500 AP</b></li>
+                  <li>Portal Edit of Location, Name or Information&nbsp;Approved =<b>&nbsp;200 AP</b></li>
+                  <li>Redeem passcode = AP can range from <b>50</b> to about <b>1500</b></li>
+                  </small>
+                  </ul>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- /.container -->
+
+
+    <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+    <script src="js/vendor/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/flat-ui.min.js"></script>
+    <script type="text/javascript">
+
+                      var $slider = $("#lole_slider");
+                      if ($slider.length > 0) {
+                        $slider.slider({
+                          min: 1,
+                          max: 16,
+                          value: 1,
+                          orientation: "horizontal",
+                          range: "min",
+                          /*change: function(event, ui) {
+                            $("#lvlup_Indicator1").html(ui.value);
+                          },*/
+                          slide: function(event, ui) {
+                            $("#lvlup_Indicator1").html("Lv "+ui.value);
+                            var xmCapacity = (ui.value>8)?10000+function(l){var t=0;s=900;while(l-8>0){t+=s;s-=100;l--}return t;}(ui.value):(2000+1000*ui.value);
+                            var recDistance = 250*ui.value;
+                            var wepLevel = (ui.value>8)?8:ui.value;
+                            var portalLevel = (ui.value<3)?1:(ui.value<4?2:(ui.value<5?3:(ui.value<7?4:5)))
+
+                            $("#lvlup_Indicator1_XM").html(xmCapacity+" XM");
+                            $("#lvlup_Indicator1_Rec").html(recDistance+" KM");
+                            $("#lvlup_Indicator1_WeaponLvl").html(wepLevel);
+                            $("#lvlup_Indicator1_PortalLvl").html(portalLevel);
+
+                          }
+      
+                        }).addSliderSegments($slider.slider("option").max);
+                      }
+
+                  </script>
+
+  </body>
+</html>
